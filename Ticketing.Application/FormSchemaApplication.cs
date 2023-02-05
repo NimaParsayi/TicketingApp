@@ -48,20 +48,24 @@ public class FormSchemaApplication : IFormSchemaApplication
     public void Add(NewFormSchemaCommand command)
     {
         formSchemaRepository.Add(new FormSchema(command.Title, command.Description, formSchemaValidator));
+        formSchemaRepository.Save();
     }
 
     public void Update(UpdateFormSchemaCommand command)
     {
         formSchemaRepository.GetBy(command.Id).Update(command.Title, command.Description, formSchemaValidator);
+        formSchemaRepository.Save();
     }
 
     public void Active(int formSchemaId)
     {
         formSchemaRepository.GetBy(formSchemaId).Active();
+        formSchemaRepository.Save();
     }
 
     public void DeActive(int formSchemaId)
     {
         formSchemaRepository.GetBy(formSchemaId).DeActive();
+        formSchemaRepository.Save();
     }
 }
