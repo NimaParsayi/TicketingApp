@@ -41,6 +41,8 @@ public class FormSchema
         Description = description;
     }
 
+    public void Active() => IsActive = true;
+
     public void DeActive() => IsActive = false;
 
     #endregion
