@@ -12,6 +12,7 @@ public class FormSchemaField
     public string Description { get; private set; }
     public int FormSchemaId { get; private set; }
     public bool IsActive { get; private set; }
+    public DateTime CreationDate { get; private set; }
     public FormSchema FormSchema { get; private set; }
 
     #endregion
