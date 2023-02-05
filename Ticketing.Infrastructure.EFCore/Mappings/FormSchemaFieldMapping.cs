@@ -8,6 +8,8 @@ public class FormSchemaFieldMapping : IEntityTypeConfiguration<FormSchemaField>
 {
     public void Configure(EntityTypeBuilder<FormSchemaField> builder)
     {
+        builder.ToTable("FormSchemasFields");
+
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Title).IsRequired().HasMaxLength(50);
         builder.Property(x => x.Description).HasMaxLength(300);
