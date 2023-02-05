@@ -9,6 +9,8 @@ public class FormSchemaMapping : IEntityTypeConfiguration<FormSchema>
 {
     public void Configure(EntityTypeBuilder<FormSchema> builder)
     {
+        builder.ToTable("FormSchemas");
+
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Title).IsRequired().HasMaxLength(50);
         builder.Property(x => x.Description).IsRequired().HasMaxLength(300);
