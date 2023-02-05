@@ -27,6 +27,7 @@ public class FormSchema
         Title = title;
         Description = description;
         IsActive = true;
+        CreationDate = DateTime.Now;
         Fields = new List<FormSchemaField>();
     }
 
