@@ -26,13 +26,13 @@ namespace Ticketing.Presentation.WebApi.Controllers
         [HttpPost]
         public void Add([FromBody] NewFormSchemaCommand command) => application.Add(command);
 
-        [HttpPost]
+        [HttpPost("Update")]
         public void Update([FromBody] UpdateFormSchemaCommand command) => application.Update(command);
 
-        [HttpPost]
+        [HttpPost("Active/{id}")]
         public void Active(int id) => application.Active(id);
 
-        [HttpPost]
+        [HttpPost("DeActive/{id}")]
         public void DeActive(int id) => application.DeActive(id);
     }
 }
