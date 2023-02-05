@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Ticketing.Infrastructure.Core\Ticketing.Infrastructure.Core.csproj" />
   </ItemGroup>
 
