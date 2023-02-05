@@ -29,6 +29,7 @@ public class FormSchemaField
         Description = description;
         FormSchemaId = formSchemaId;
         IsActive = true;
+        CreationDate = DateTime.Now;
     }
 
     #endregion
