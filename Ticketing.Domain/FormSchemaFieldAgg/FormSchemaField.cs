@@ -1,4 +1,5 @@
 ﻿using Ticketing.Domain.FormSchemaAgg;
+using Ticketing.Domain.FormSchemaAgg.Services;
 
 namespace Ticketing.Domain.FormSchemaFieldAgg;
 
@@ -19,8 +20,10 @@ public class FormSchemaField
 
     protected FormSchemaField() { }
 
-    public FormSchemaField(string title, string description, int formSchemaId)
+    public FormSchemaField(string title, string description, int formSchemaId, IFormSchemaFieldValidator validator)
     {
+        validator.CheckTitleIsNotEmpty(title);
+        validator.CheckDescriptionIsNotEmpty(description);
         Title = title;
         Description = description;
         FormSchemaId = formSchemaId;
@@ -31,11 +34,15 @@ public class FormSchemaField
 
     #region Methods
 
-    public void Update(string title, string description)
+    public void Update(string title, string description, IFormSchemaFieldValidator validator)
     {
+        validator.CheckTitleIsNotEmpty(title);
+        validator.CheckDescriptionIsNotEmpty(description);
         Title = title;
         Description = description;
     }
+
+    public void Active() => IsActive = true;
 
     public void DeActive() => IsActive = false;
 
