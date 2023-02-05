@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Application.Contr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Application", "Ticketing.Application\Ticketing.Application.csproj", "{46C18161-21BE-448D-BEF9-1B9A80D0F1A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Infrastructure.EFCore", "Ticketing.Infrastructure.EFCore\Ticketing.Infrastructure.EFCore.csproj", "{A01207E6-B816-416A-A3C8-50646B2BB178}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{46C18161-21BE-448D-BEF9-1B9A80D0F1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46C18161-21BE-448D-BEF9-1B9A80D0F1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46C18161-21BE-448D-BEF9-1B9A80D0F1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01207E6-B816-416A-A3C8-50646B2BB178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01207E6-B816-416A-A3C8-50646B2BB178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01207E6-B816-416A-A3C8-50646B2BB178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01207E6-B816-416A-A3C8-50646B2BB178}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
