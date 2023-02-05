@@ -16,20 +16,5 @@ public class FormSchemaRepository : IFormSchemaRepository
 
     public void Add(FormSchema formSchema) => context.Add(formSchema);
 
-    public void Update(FormSchema formSchema)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Active(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void DeActive(int id)
-    {
-        throw new NotImplementedException();
-    }
-
     public void Save() => context.SaveChanges();
 }
