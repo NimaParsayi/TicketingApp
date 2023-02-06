@@ -14,12 +14,25 @@ namespace Ticketing.Infrastructure.Core
         public static void Set(IServiceCollection services, string connectionString)
         {
             // Database Services
+
+            #region  Database Services
+
             services.AddDbContext<TicketingContext>(options => options.UseSqlServer(connectionString));
             services.AddTransient<IFormSchemaRepository, FormSchemaRepository>();
 
-            // Applications
+            #endregion
+
+            #region Applications
+
+            // FormSchema
             services.AddTransient<IFormSchemaValidator, FormSchemaValidator>();
             services.AddTransient<IFormSchemaApplication, FormSchemaApplication>();
+
+            // FormSchemaField
+            services.AddTransient<IFormSchemaFieldValidator, FormSchemaFieldValidator>();
+            //services.AddTransient<IFormSchemaFieldApplication, FormSchemaFieldApplication>();
+
+            #endregion
         }
     }
 }
