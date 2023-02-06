@@ -12,6 +12,12 @@ public class FormSchemaFieldApplication: IFormSchemaFieldApplication
 {
     private readonly IFormSchemaFieldRepository formSchemaFieldRepository;
     private readonly IFormSchemaFieldValidator formSchemaFieldValidator;
+    public FormSchemaFieldApplication(IFormSchemaFieldRepository formSchemaFieldRepository, IFormSchemaFieldValidator formSchemaFieldValidator)
+    {
+        this.formSchemaFieldRepository = formSchemaFieldRepository;
+        this.formSchemaFieldValidator = formSchemaFieldValidator;
+    }
+
     public IList<FormSchemaFieldViewModel> GetAll()
     {
         var list = new List<FormSchemaFieldViewModel>();
