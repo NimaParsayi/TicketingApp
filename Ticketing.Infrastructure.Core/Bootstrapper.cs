@@ -5,6 +5,7 @@ using Ticketing.Application.Contracts.FormSchema;
 using Ticketing.Application.Contracts.FormSchemaField;
 using Ticketing.Domain.FormSchemaAgg;
 using Ticketing.Domain.FormSchemaAgg.Services;
+using Ticketing.Domain.FormSchemaFieldAgg;
 using Ticketing.Infrastructure.EFCore;
 using Ticketing.Infrastructure.EFCore.Services;
 
@@ -18,6 +19,7 @@ namespace Ticketing.Infrastructure.Core
 
             services.AddDbContext<TicketingContext>(options => options.UseSqlServer(connectionString));
             services.AddTransient<IFormSchemaRepository, FormSchemaRepository>();
+            services.AddTransient<IFormSchemaFieldRepository, FormSchemaFieldRepository>();
 
             #endregion
 
