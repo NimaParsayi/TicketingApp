@@ -1,6 +1,4 @@
-﻿using Ticketing.Domain.FormSchemaAgg;
-
-namespace Ticketing.Domain.FormSchemaFieldAgg;
+﻿namespace Ticketing.Domain.FormSchemaFieldAgg;
 
 public interface IFormSchemaFieldRepository
 {

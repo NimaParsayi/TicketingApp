@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Domain.FormSchemaAgg.Services;
+﻿namespace Ticketing.Domain.FormSchemaFieldAgg.Services;
 
 public interface IFormSchemaFieldValidator
 {
