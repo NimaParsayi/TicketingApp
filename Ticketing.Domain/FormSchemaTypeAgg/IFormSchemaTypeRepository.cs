@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Domain.FormTypeAgg;
+﻿namespace Ticketing.Domain.FormSchemaTypeAgg;
 
 public interface IFormSchemaTypeRepository
 {

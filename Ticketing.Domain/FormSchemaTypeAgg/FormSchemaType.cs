@@ -1,6 +1,6 @@
 ﻿using Ticketing.Domain.FormSchemaAgg;
 
-namespace Ticketing.Domain.FormTypeAgg;
+namespace Ticketing.Domain.FormSchemaTypeAgg;
 
 public class FormSchemaType
 {
