@@ -10,7 +10,7 @@ public class FormSchemaType
     public string Title { get; private set; }
     public bool IsActive { get; private set; }
     public DateTime CreationDate { get; private set; }
-    public IEnumerable<FormSchema> Schemas { get; private set; }
+    public FormSchema Schema { get; private set; }
 
     #endregion
 
@@ -23,7 +23,6 @@ public class FormSchemaType
         Title = title;
         CreationDate = DateTime.Now;
         IsActive = true;
-        Schemas = new List<FormSchema>();
     }
 
     #endregion

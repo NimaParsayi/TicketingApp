@@ -1,5 +1,6 @@
 ﻿using Ticketing.Domain.FormSchemaAgg.Services;
 using Ticketing.Domain.FormSchemaFieldAgg;
+using Ticketing.Domain.FormTypeAgg;
 
 namespace Ticketing.Domain.FormSchemaAgg;
 
@@ -11,8 +12,10 @@ public class FormSchema
     public string Title { get; private set; }
     public string Description { get; private set; }
     public bool IsActive { get; private set; }
+    public int TypeId { get; private set; }
     public DateTime CreationDate { get; private set; }
     public IEnumerable<FormSchemaField> Fields { get; private set; }
+    public FormSchemaType Type { get; private set; }
 
     #endregion
 

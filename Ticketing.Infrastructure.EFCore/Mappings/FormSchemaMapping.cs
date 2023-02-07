@@ -16,6 +16,7 @@ public class FormSchemaMapping : IEntityTypeConfiguration<FormSchema>
         builder.Property(x => x.Description).IsRequired().HasMaxLength(300);
         builder.Property(x => x.IsActive).IsRequired();
 
+        builder.HasOne(x => x.Type).WithOne(x => x.Schema);
         builder.HasMany(x => x.Fields).WithOne(x => x.FormSchema).HasForeignKey(x => x.FormSchemaId);
     }
 }
