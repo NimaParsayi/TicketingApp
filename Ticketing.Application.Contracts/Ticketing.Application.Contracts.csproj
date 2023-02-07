@@ -9,6 +9,8 @@
   <ItemGroup>
     <Folder Include="FormSchemaField\Commands\" />
     <Folder Include="FormSchemaField\ViewModels\" />
+    <Folder Include="FormSchemaType\Commands\" />
+    <Folder Include="FormSchemaType\ViewModels\" />
     <Folder Include="FormSchema\ViewModels\" />
   </ItemGroup>
 
