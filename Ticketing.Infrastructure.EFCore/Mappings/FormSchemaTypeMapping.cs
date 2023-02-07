@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Ticketing.Domain.FormTypeAgg;
-
+using Ticketing.Domain.FormSchemaTypeAgg;
 namespace Ticketing.Infrastructure.EFCore.Mappings;
 
 public class FormSchemaTypeMapping : IEntityTypeConfiguration<FormSchemaType>

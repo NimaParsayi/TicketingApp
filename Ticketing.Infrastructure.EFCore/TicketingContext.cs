@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Ticketing.Domain.FormSchemaAgg;
 using Ticketing.Domain.FormSchemaFieldAgg;
-using Ticketing.Domain.FormTypeAgg;
+using Ticketing.Domain.FormSchemaTypeAgg;
 using Ticketing.Infrastructure.EFCore.Mappings;
 
 namespace Ticketing.Infrastructure.EFCore;
