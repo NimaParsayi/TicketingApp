@@ -1,4 +1,5 @@
-﻿using Ticketing.Domain.FormSchemaFieldAgg;
+﻿using Microsoft.EntityFrameworkCore;
+using Ticketing.Domain.FormSchemaFieldAgg;
 
 namespace Ticketing.Infrastructure.EFCore.Services;
 
@@ -10,9 +11,9 @@ public class FormSchemaFieldRepository : IFormSchemaFieldRepository
         this.context = context;
     }
 
-    public IList<FormSchemaField> Get() => context.FormSchemasFields.ToList();
+    public IList<FormSchemaField> Get() => context.FormSchemasFields.Include(x => x.FormSchema).ToList();
 
-    public FormSchemaField GetBy(int id) => context.FormSchemasFields.Find(id);
+    public FormSchemaField GetBy(int id) => context.FormSchemasFields.Include(x => x.FormSchema).FirstOrDefault(x => x.Id == id);
 
     public void Add(FormSchemaField formSchemaField) => context.FormSchemasFields.Add(formSchemaField);
 
