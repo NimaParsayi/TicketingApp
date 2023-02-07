@@ -3,10 +3,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Ticketing.Application;
 using Ticketing.Application.Contracts.FormSchema;
 using Ticketing.Application.Contracts.FormSchemaField;
+using Ticketing.Application.Contracts.FormSchemaType;
 using Ticketing.Domain.FormSchemaAgg;
 using Ticketing.Domain.FormSchemaAgg.Services;
 using Ticketing.Domain.FormSchemaFieldAgg;
 using Ticketing.Domain.FormSchemaFieldAgg.Services;
+using Ticketing.Domain.FormSchemaTypeAgg.Services;
 using Ticketing.Infrastructure.EFCore;
 using Ticketing.Infrastructure.EFCore.Services;
 
@@ -25,6 +27,10 @@ namespace Ticketing.Infrastructure.Core
             #endregion
 
             #region Applications
+
+            // FormSchemaType
+            services.AddTransient<IFormSchemaTypeValidator, FormSchemaTypeValidator>();
+            services.AddTransient<IFormSchemaTypeApplication, FormSchemaTypeApplication>();
 
             // FormSchema
             services.AddTransient<IFormSchemaValidator, FormSchemaValidator>();
