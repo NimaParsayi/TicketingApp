@@ -1,6 +1,6 @@
 ﻿using Ticketing.Domain.FormSchemaAgg.Services;
 using Ticketing.Domain.FormSchemaFieldAgg;
-using Ticketing.Domain.FormTypeAgg;
+using Ticketing.Domain.FormSchemaTypeAgg;
 
 namespace Ticketing.Domain.FormSchemaAgg;
 
