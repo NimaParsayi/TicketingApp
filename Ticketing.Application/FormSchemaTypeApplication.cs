@@ -23,7 +23,10 @@ public class FormSchemaTypeApplication: IFormSchemaTypeApplication
         {
             list.Add(new FormSchemaTypeViewModel()
             {
-                
+                Id = formSchemaType.Id,
+                Title = formSchemaType.Title,
+                IsActive = formSchemaType.IsActive,
+                CreationDate = formSchemaType.CreationDate.ToShortDateString(),
             });
         }
 
@@ -32,9 +35,13 @@ public class FormSchemaTypeApplication: IFormSchemaTypeApplication
 
     public FormSchemaTypeViewModel GetBy(int id)
     {
+        var formSchemaType = formSchemaTypeRepository.GetBy(id);
         return new FormSchemaTypeViewModel()
         {
-
+            Id = formSchemaType.Id,
+            Title = formSchemaType.Title,
+            IsActive = formSchemaType.IsActive,
+            CreationDate = formSchemaType.CreationDate.ToShortDateString(),
         };
     }
 
