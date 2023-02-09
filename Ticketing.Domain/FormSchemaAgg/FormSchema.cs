@@ -23,12 +23,13 @@ public class FormSchema
 
     protected FormSchema() { }
 
-    public FormSchema(string title, string description, IFormSchemaValidator validator)
+    public FormSchema(string title, string description, int typeId, IFormSchemaValidator validator)
     {
         validator.CheckTitleIsNotEmpty(title);
         validator.CheckDescriptionIsNotEmpty(description);
         Title = title;
         Description = description;
+        TypeId = typeId;
         IsActive = true;
         CreationDate = DateTime.Now;
         Fields = new List<FormSchemaField>();

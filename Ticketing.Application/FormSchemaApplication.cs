@@ -26,7 +26,8 @@ public class FormSchemaApplication : IFormSchemaApplication
                 Id = formSchema.Id,
                 Title = formSchema.Title,
                 Description = formSchema.Description,
-                CreationDate = formSchema.CreationDate.ToShortDateString()
+                CreationDate = formSchema.CreationDate.ToShortDateString(),
+                TypeId = formSchema.TypeId,
             });
         }
 
@@ -41,13 +42,14 @@ public class FormSchemaApplication : IFormSchemaApplication
             Id = formSchema.Id,
             Title = formSchema.Title,
             Description = formSchema.Description,
-            CreationDate = formSchema.CreationDate.ToShortDateString()
+            CreationDate = formSchema.CreationDate.ToShortDateString(),
+            TypeId = formSchema.TypeId,
         };
     }
 
     public void Add(NewFormSchemaCommand command)
     {
-        formSchemaRepository.Add(new FormSchema(command.Title, command.Description, formSchemaValidator));
+        formSchemaRepository.Add(new FormSchema(command.Title, command.Description, command.TypeId, formSchemaValidator));
         formSchemaRepository.Save();
     }
 
