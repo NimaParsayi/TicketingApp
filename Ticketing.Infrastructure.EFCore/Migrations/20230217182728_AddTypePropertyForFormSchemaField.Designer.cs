@@ -12,7 +12,7 @@ using Ticketing.Infrastructure.EFCore;
 namespace Ticketing.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(TicketingContext))]
-    [Migration("20230217180602_AddTypePropertyForFormSchemaField")]
+    [Migration("20230217182728_AddTypePropertyForFormSchemaField")]
     partial class AddTypePropertyForFormSchemaField
     {
         /// <inheritdoc />
@@ -87,8 +87,8 @@ namespace Ticketing.Infrastructure.EFCore.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<short>("Type")
-                        .HasColumnType("smallint");
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

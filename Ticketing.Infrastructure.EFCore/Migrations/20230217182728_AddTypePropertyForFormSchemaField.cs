@@ -10,12 +10,12 @@ namespace Ticketing.Infrastructure.EFCore.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<short>(
+            migrationBuilder.AddColumn<int>(
                 name: "Type",
                 table: "FormSchemasFields",
-                type: "smallint",
+                type: "int",
                 nullable: false,
-                defaultValue: (short)0);
+                defaultValue: 0);
         }
 
         /// <inheritdoc />
