@@ -9,7 +9,7 @@ using Ticketing.Domain.FormSchemaFieldAgg.Services;
 
 namespace Ticketing.Application;
 
-public class FormSchemaFieldApplication: IFormSchemaFieldApplication
+public class FormSchemaFieldApplication : IFormSchemaFieldApplication
 {
     private readonly IFormSchemaFieldRepository formSchemaFieldRepository;
     private readonly IFormSchemaFieldValidator formSchemaFieldValidator;
@@ -53,13 +53,13 @@ public class FormSchemaFieldApplication: IFormSchemaFieldApplication
 
     public void Add(NewFormSchemaFieldCommand command)
     {
-        formSchemaFieldRepository.Add(new FormSchemaField(command.Title, command.Description, command.FormSchemaId, formSchemaFieldValidator));
+        formSchemaFieldRepository.Add(new FormSchemaField(command.Title, command.Description, command.FormSchemaId, command.Type, formSchemaFieldValidator));
         formSchemaFieldRepository.Save();
     }
 
     public void Update(UpdateFormSchemaFieldCommand command)
     {
-        formSchemaFieldRepository.GetBy(command.Id).Update(command.Title, command.Description, formSchemaFieldValidator);
+        formSchemaFieldRepository.GetBy(command.Id).Update(command.Title, command.Description, command.Type, formSchemaFieldValidator);
         formSchemaFieldRepository.Save();
     }
 
