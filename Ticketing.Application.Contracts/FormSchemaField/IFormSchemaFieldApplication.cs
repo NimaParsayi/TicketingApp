@@ -9,6 +9,7 @@ public interface IFormSchemaFieldApplication
 {
     IList<FormSchemaFieldViewModel> GetAll();
     FormSchemaFieldViewModel GetBy(int id);
+    Array GetFieldTypes();
     void Add(NewFormSchemaFieldCommand command);
     void Update(UpdateFormSchemaFieldCommand command);
     void Active(int formSchemaFieldId);

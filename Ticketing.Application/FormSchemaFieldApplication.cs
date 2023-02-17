@@ -5,6 +5,7 @@ using Ticketing.Application.Contracts.FormSchemaField.ViewModels;
 using Ticketing.Domain.FormSchemaAgg;
 using Ticketing.Domain.FormSchemaAgg.Services;
 using Ticketing.Domain.FormSchemaFieldAgg;
+using Ticketing.Domain.FormSchemaFieldAgg.Enums;
 using Ticketing.Domain.FormSchemaFieldAgg.Services;
 
 namespace Ticketing.Application;
@@ -49,6 +50,11 @@ public class FormSchemaFieldApplication : IFormSchemaFieldApplication
             CreationDate = formSchemaField.CreationDate.ToShortDateString(),
             FormSchemaId = formSchemaField.FormSchemaId
         };
+    }
+
+    public Array GetFieldTypes()
+    {
+        return Enum.GetNames<FormSchemaFieldType>();
     }
 
     public void Add(NewFormSchemaFieldCommand command)

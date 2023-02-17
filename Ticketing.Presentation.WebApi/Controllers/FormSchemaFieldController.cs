@@ -24,6 +24,9 @@ namespace Ticketing.Presentation.WebApi.Controllers
         [HttpGet("{id}")]
         public FormSchemaFieldViewModel Get(int id) => application.GetBy(id);
 
+        [HttpGet("Types")]
+        public Array GetFieldTypes() => application.GetFieldTypes();
+
         [HttpPost]
         public void Add([FromBody] NewFormSchemaFieldCommand command) => application.Add(command);
 
