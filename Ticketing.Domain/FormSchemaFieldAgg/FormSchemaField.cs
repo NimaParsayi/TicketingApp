@@ -1,4 +1,5 @@
 ﻿using Ticketing.Domain.FormSchemaAgg;
+using Ticketing.Domain.FormSchemaFieldAgg.Enums;
 using Ticketing.Domain.FormSchemaFieldAgg.Services;
 
 namespace Ticketing.Domain.FormSchemaFieldAgg;
@@ -10,6 +11,7 @@ public class FormSchemaField
     public int Id { get; private set; }
     public string Title { get; private set; }
     public string Description { get; private set; }
+    public FormSchemaFieldType Type { get; private set; }
     public int FormSchemaId { get; private set; }
     public bool IsActive { get; private set; }
     public DateTime CreationDate { get; private set; }
@@ -21,12 +23,13 @@ public class FormSchemaField
 
     protected FormSchemaField() { }
 
-    public FormSchemaField(string title, string description, int formSchemaId, IFormSchemaFieldValidator validator)
+    public FormSchemaField(string title, string description, int formSchemaId, FormSchemaFieldType type, IFormSchemaFieldValidator validator)
     {
         validator.CheckTitleIsNotEmpty(title);
         validator.CheckDescriptionIsNotEmpty(description);
         Title = title;
         Description = description;
+        Type = type;
         FormSchemaId = formSchemaId;
         IsActive = true;
         CreationDate = DateTime.Now;
