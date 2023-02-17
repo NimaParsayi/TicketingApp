@@ -14,4 +14,8 @@
     <Folder Include="FormSchema\ViewModels\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ticketing.Domain\Ticketing.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
