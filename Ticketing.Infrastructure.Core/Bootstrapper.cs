@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Ticketing.Application;
+using Ticketing.Application.Contracts.Form;
 using Ticketing.Application.Contracts.FormSchema;
 using Ticketing.Application.Contracts.FormSchemaField;
 using Ticketing.Application.Contracts.FormSchemaType;
+using Ticketing.Domain.FormAgg;
+using Ticketing.Domain.FormAgg.Services;
 using Ticketing.Domain.FormSchemaAgg;
 using Ticketing.Domain.FormSchemaAgg.Services;
 using Ticketing.Domain.FormSchemaFieldAgg;
@@ -25,6 +28,7 @@ namespace Ticketing.Infrastructure.Core
             services.AddTransient<IFormSchemaTypeRepository, FormSchemaTypeRepository>();
             services.AddTransient<IFormSchemaRepository, FormSchemaRepository>();
             services.AddTransient<IFormSchemaFieldRepository, FormSchemaFieldRepository>();
+            services.AddTransient<IFormRepository, FormRepository>();
 
             #endregion
 
@@ -41,6 +45,10 @@ namespace Ticketing.Infrastructure.Core
             // FormSchemaField
             services.AddTransient<IFormSchemaFieldValidator, FormSchemaFieldValidator>();
             services.AddTransient<IFormSchemaFieldApplication, FormSchemaFieldApplication>();
+
+            // Form
+            services.AddTransient<IFormValidator, FormValidator>();
+            services.AddTransient<IFormApplication, FormApplication>();
 
             #endregion
         }
