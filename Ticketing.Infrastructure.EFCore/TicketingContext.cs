@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Ticketing.Domain.FormAgg;
 using Ticketing.Domain.FormSchemaAgg;
 using Ticketing.Domain.FormSchemaFieldAgg;
 using Ticketing.Domain.FormSchemaTypeAgg;
@@ -13,12 +14,14 @@ public class TicketingContext : DbContext
     public DbSet<FormSchemaType> FormSchemaTypes { get; set; }
     public DbSet<FormSchema> FormSchemas { get; set; }
     public DbSet<FormSchemaField> FormSchemasFields { get; set; }
+    public DbSet<Form> Forms { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new FormSchemaTypeMapping());
         modelBuilder.ApplyConfiguration(new FormSchemaMapping());
         modelBuilder.ApplyConfiguration(new FormSchemaFieldMapping());
+        modelBuilder.ApplyConfiguration(new FormMapping());
 
         base.OnModelCreating(modelBuilder);
     }
