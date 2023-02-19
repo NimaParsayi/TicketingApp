@@ -23,6 +23,9 @@ namespace Ticketing.Presentation.WebApi.Controllers
         [HttpGet("{id}")]
         public FormSchemaViewModel Get(int id) => application.GetBy(id);
 
+        [HttpGet("GetFormStructure/{id}")]
+        public FormSchemaStructureViewModel GetFormStructure(int id) => application.GetFormStructure(id);
+
         [HttpPost]
         public void Add([FromBody] NewFormSchemaCommand command) => application.Add(command);
 
