@@ -1,4 +1,5 @@
 ﻿using Ticketing.Domain.FormAgg.Services;
+using Ticketing.Domain.FormReplyAgg;
 
 namespace Ticketing.Domain.FormAgg;
 
@@ -10,7 +11,7 @@ public class Form
     public string Mobile { get; private set; }
     public string Data { get; private set; }
     public DateTime CreationDate { get; private set; }
-
+    public IList<FormReply> Replies { get; private set; }
 
     #endregion
 
@@ -25,6 +26,7 @@ public class Form
         Mobile = mobile;
         Data = data;
         CreationDate = DateTime.Now;
+        Replies = new List<FormReply>();
     }
 
     #endregion
