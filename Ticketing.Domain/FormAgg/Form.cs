@@ -1,4 +1,6 @@
-﻿namespace Ticketing.Domain.FormAgg;
+﻿using Ticketing.Domain.FormAgg.Services;
+
+namespace Ticketing.Domain.FormAgg;
 
 public class Form
 {
@@ -16,8 +18,10 @@ public class Form
 
     protected Form() { }
 
-    public Form(string mobile, object data)
+    public Form(string mobile, object data, IFormValidator validator)
     {
+        validator.CheckMobileCorrection(mobile);
+        validator.CheckDataIsNotEmpty(data);
         Mobile = mobile;
         Data = data;
         CreationDate = DateTime.Now;
@@ -27,7 +31,11 @@ public class Form
 
     #region Methods
 
-    
+    public void UpdateMobile(string mobile, IFormValidator validator)
+    {
+        validator.CheckMobileCorrection(mobile);
+        Mobile = mobile;
+    }
 
     #endregion
 }
