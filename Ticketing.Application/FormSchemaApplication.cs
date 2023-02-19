@@ -1,8 +1,11 @@
-﻿using Ticketing.Application.Contracts.FormSchema;
+﻿using System.Collections.Generic;
+using System.Dynamic;
+using Ticketing.Application.Contracts.FormSchema;
 using Ticketing.Application.Contracts.FormSchema.Commands;
 using Ticketing.Application.Contracts.FormSchema.ViewModels;
 using Ticketing.Domain.FormSchemaAgg;
 using Ticketing.Domain.FormSchemaAgg.Services;
+using Ticketing.Domain.FormSchemaTypeAgg;
 
 namespace Ticketing.Application;
 
@@ -10,10 +13,12 @@ public class FormSchemaApplication : IFormSchemaApplication
 {
     private readonly IFormSchemaRepository formSchemaRepository;
     private readonly IFormSchemaValidator formSchemaValidator;
-    public FormSchemaApplication(IFormSchemaRepository formSchemaRepository, IFormSchemaValidator formSchemaValidator)
+    private readonly IFormSchemaTypeRepository formSchemaTypeRepository;
+    public FormSchemaApplication(IFormSchemaRepository formSchemaRepository, IFormSchemaValidator formSchemaValidator, IFormSchemaTypeRepository formSchemaTypeRepository)
     {
         this.formSchemaRepository = formSchemaRepository;
         this.formSchemaValidator = formSchemaValidator;
+        this.formSchemaTypeRepository = formSchemaTypeRepository;
     }
 
     public IList<FormSchemaViewModel> GetAll()
@@ -44,6 +49,27 @@ public class FormSchemaApplication : IFormSchemaApplication
             Description = formSchema.Description,
             CreationDate = formSchema.CreationDate.ToShortDateString(),
             TypeId = formSchema.TypeId,
+        };
+    }
+
+    public FormSchemaStructureViewModel GetFormStructure(int typeId)
+    {
+        var formStructure = formSchemaTypeRepository.GetBy(typeId).Schema;
+        ExpandoObject obj = new ExpandoObject();
+        var formFields = (IDictionary<string, object>)obj;
+        foreach (var field in formStructure.Fields)
+        {
+            formFields.Add(field.Title, new
+            {
+                field.Description,
+                field.Type,
+            });
+        }
+        return new FormSchemaStructureViewModel()
+        {
+            Title = formStructure.Title,
+            Description = formStructure.Description,
+            Fields = formFields,
         };
     }
 

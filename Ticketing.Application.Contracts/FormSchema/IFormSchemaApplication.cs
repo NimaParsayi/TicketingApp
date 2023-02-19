@@ -7,6 +7,7 @@ public interface IFormSchemaApplication
 {
     IList<FormSchemaViewModel> GetAll();
     FormSchemaViewModel GetBy(int id);
+    FormSchemaStructureViewModel GetFormStructure(int typeId);
     void Add(NewFormSchemaCommand command);
     void Update(UpdateFormSchemaCommand command);
     void Active(int formSchemaId);
