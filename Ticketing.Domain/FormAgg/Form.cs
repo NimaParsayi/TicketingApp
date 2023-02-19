@@ -8,7 +8,7 @@ public class Form
 
     public int Id { get; private set; }
     public string Mobile { get; private set; }
-    public object Data { get; private set; }
+    public string Data { get; private set; }
     public DateTime CreationDate { get; private set; }
 
 
