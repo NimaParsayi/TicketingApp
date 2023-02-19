@@ -1,4 +1,5 @@
 ﻿using Ticketing.Domain.FormAgg;
+using Ticketing.Domain.FormReplyAgg.Services;
 
 namespace Ticketing.Domain.FormReplyAgg;
 
@@ -21,8 +22,10 @@ public class FormReply
 
     protected FormReply() { }
 
-    public FormReply(string message, string mobile, int formId, long replyToMessageId = 0)
+    public FormReply(string message, string mobile, int formId, IFormReplyValidator validator, long replyToMessageId = 0)
     {
+        validator.CheckMesssageIsNotEmpty(message);
+        validator.CheckMobileCorrection(mobile);
         Message = message;
         Mobile = mobile;
         FormId = formId;
@@ -34,13 +37,15 @@ public class FormReply
 
     #region Methods
 
-    public void EditMessage(string message)
+    public void EditMessage(string message, IFormReplyValidator validator)
     {
+        validator.CheckMesssageIsNotEmpty(message);
         Message = message;
     }
 
-    public void EditMobile(string mobile)
+    public void EditMobile(string mobile, IFormReplyValidator validator)
     {
+        validator.CheckMobileCorrection(mobile);
         Mobile = mobile;
     }
 
