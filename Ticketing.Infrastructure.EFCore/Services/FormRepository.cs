@@ -16,5 +16,7 @@ public class FormRepository : IFormRepository
 
     public IList<Form> GetBy(string mobile) => context.Forms.Where(x => x.Mobile == mobile).ToList();
 
+    public void Add(Form form) => context.Forms.Add(form);
+
     public void Save() => context.SaveChanges();
 }
