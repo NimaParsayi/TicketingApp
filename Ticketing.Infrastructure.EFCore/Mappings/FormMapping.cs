@@ -12,7 +12,7 @@ public class FormMapping : IEntityTypeConfiguration<Form>
 
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Mobile).HasMaxLength(12).IsRequired();
-        builder.Property(x => x.Data).HasConversion<string>(x=>x.ToString()).IsRequired();
+        builder.Property(x => x.Data).IsRequired();
         builder.Property(x => x.CreationDate).IsRequired();
     }
 }

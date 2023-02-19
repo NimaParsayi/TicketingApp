@@ -18,7 +18,7 @@ public class Form
 
     protected Form() { }
 
-    public Form(string mobile, object data, IFormValidator validator)
+    public Form(string mobile, string data, IFormValidator validator)
     {
         validator.CheckMobileCorrection(mobile);
         validator.CheckDataIsNotEmpty(data);
