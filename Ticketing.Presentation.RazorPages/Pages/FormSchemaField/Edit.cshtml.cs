@@ -10,11 +10,9 @@ namespace Ticketing.Presentation.RazorPages.Pages.FormSchemaField
     public class EditModel : PageModel
     {
         private readonly IFormSchemaFieldApplication application;
-        private readonly IFormSchemaApplication schemaApplication;
-        public EditModel(IFormSchemaFieldApplication application, IFormSchemaApplication schemaApplication)
+        public EditModel(IFormSchemaFieldApplication application)
         {
             this.application = application;
-            this.schemaApplication = schemaApplication;
         }
 
 
