@@ -17,5 +17,7 @@ public class FormSchemaFieldRepository : IFormSchemaFieldRepository
 
     public void Add(FormSchemaField formSchemaField) => context.FormSchemasFields.Add(formSchemaField);
 
-    public void Save() => context.SaveChangesAsync();
+    public void Update(FormSchemaField formSchemaField) => context.FormSchemasFields.Update(formSchemaField);
+
+    public void Save() => context.SaveChanges();
 }
