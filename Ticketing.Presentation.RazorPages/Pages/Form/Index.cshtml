@@ -1,0 +1,28 @@
+﻿@page
+@model Ticketing.Presentation.RazorPages.Pages.Form.IndexModel
+@{
+}
+
+<a role="button" asp-page="/Details" class="btn btn-sm btn-primary">See Full</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Date of Creation</th>
+            <th scope="col">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var form in Model.Forms)
+        {
+            <tr>
+                <th scope="row">@form.Id</th>
+                <td>@form.Mobile</td>
+                <td>@form.CreationDate</td>
+                <td><a role="button" asp-page="/Details" asp-route:id="@form.Id" class="btn btn-sm btn-primary">See Full</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>

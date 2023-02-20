@@ -11,11 +11,11 @@ public class FormReplyRepository : IFormReplyRepository
         this.context = context;
     }
 
-    public IList<FormReply> Get() => context.FormsReplies.Include(x => x.ReplyToMessage).Include(x => x.Form).ToList();
+    public IList<FormReply> Get() => context.FormsReplies.Include(x => x.Form).ToList();
 
-    public FormReply GetBy(long id) => context.FormsReplies.Include(x => x.ReplyToMessage).Include(x => x.Form).FirstOrDefault(x => x.Id == id);
+    public FormReply GetBy(long id) => context.FormsReplies.Include(x => x.Form).FirstOrDefault(x => x.Id == id);
 
-    public IList<FormReply> GetBy(string mobile) => context.FormsReplies.Include(x => x.ReplyToMessage).Include(x => x.Form).Where(x => x.Mobile == mobile).ToList();
+    public IList<FormReply> GetBy(string mobile) => context.FormsReplies.Include(x => x.Form).Where(x => x.Mobile == mobile).ToList();
 
     public void Add(FormReply formReply) => context.FormsReplies.Add(formReply);
 
