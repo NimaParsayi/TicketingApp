@@ -1,0 +1,13 @@
+﻿@page
+@model Ticketing.Presentation.RazorPages.Pages.FormSchemaType.EditModel
+@{
+}
+
+<form method="post">
+    <input type="hidden" asp-for="Command.Id" required>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title of Type</label>
+        <input type="text" class="form-control" id="title" aria-describedby="title" asp-for="Command.Title" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
