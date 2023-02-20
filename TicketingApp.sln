@@ -5,15 +5,17 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Domain", "Ticketing.Domain\Ticketing.Domain.csproj", "{A0B816EB-EB08-4A38-B09F-27F5F5FF0D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Application.Contracts", "Ticketing.Application.Contracts\Ticketing.Application.Contracts.csproj", "{C9A884A0-56BC-4DBE-927A-949104A65703}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Application.Contracts", "Ticketing.Application.Contracts\Ticketing.Application.Contracts.csproj", "{C9A884A0-56BC-4DBE-927A-949104A65703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Application", "Ticketing.Application\Ticketing.Application.csproj", "{46C18161-21BE-448D-BEF9-1B9A80D0F1A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Application", "Ticketing.Application\Ticketing.Application.csproj", "{46C18161-21BE-448D-BEF9-1B9A80D0F1A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Infrastructure.EFCore", "Ticketing.Infrastructure.EFCore\Ticketing.Infrastructure.EFCore.csproj", "{A01207E6-B816-416A-A3C8-50646B2BB178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Infrastructure.EFCore", "Ticketing.Infrastructure.EFCore\Ticketing.Infrastructure.EFCore.csproj", "{A01207E6-B816-416A-A3C8-50646B2BB178}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Infrastructure.Core", "Ticketing.Infrastructure.Core\Ticketing.Infrastructure.Core.csproj", "{85C99778-D6E3-4A67-AF3C-4A16FCDCCBBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Infrastructure.Core", "Ticketing.Infrastructure.Core\Ticketing.Infrastructure.Core.csproj", "{85C99778-D6E3-4A67-AF3C-4A16FCDCCBBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Presentation.WebApi", "Ticketing.Presentation.WebApi\Ticketing.Presentation.WebApi.csproj", "{768CA6CD-3C60-4370-A38D-8BD9430BF8D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Presentation.WebApi", "Ticketing.Presentation.WebApi\Ticketing.Presentation.WebApi.csproj", "{768CA6CD-3C60-4370-A38D-8BD9430BF8D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Presentation.RazorPages", "Ticketing.Presentation.RazorPages\Ticketing.Presentation.RazorPages.csproj", "{D4037FB0-C57D-4DF3-95B7-0819AFF58913}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{768CA6CD-3C60-4370-A38D-8BD9430BF8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{768CA6CD-3C60-4370-A38D-8BD9430BF8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{768CA6CD-3C60-4370-A38D-8BD9430BF8D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4037FB0-C57D-4DF3-95B7-0819AFF58913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4037FB0-C57D-4DF3-95B7-0819AFF58913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4037FB0-C57D-4DF3-95B7-0819AFF58913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4037FB0-C57D-4DF3-95B7-0819AFF58913}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
