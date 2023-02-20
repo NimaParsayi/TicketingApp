@@ -14,7 +14,6 @@ public class FormReply
     public long ReplyToMessageId { get; private set; }
     public DateTime CreationDate { get; private set; }
     public Form Form { get; private set; }
-    public FormReply ReplyToMessage { get; private set; }
 
     #endregion
 

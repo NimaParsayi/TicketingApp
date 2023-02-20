@@ -18,6 +18,5 @@ public class FormReplyMapping : IEntityTypeConfiguration<FormReply>
         builder.Property(x => x.ReplyToMessageId);
 
         builder.HasOne(x => x.Form).WithMany(x => x.Replies).HasForeignKey(x => x.FormId);
-        builder.HasOne(x => x.ReplyToMessage).WithOne(x => x.ReplyToMessage);
     }
 }
