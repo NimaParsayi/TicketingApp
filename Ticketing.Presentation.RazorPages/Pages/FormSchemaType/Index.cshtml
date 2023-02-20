@@ -1,0 +1,28 @@
+﻿@page
+@model Ticketing.Presentation.RazorPages.Pages.FormSchemaType.IndexModel
+@{
+}
+
+<a role="button" asp-page="/Add" class="btn btn-sm btn-success">New Type</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date of Creation</th>
+            <th scope="col">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var type in Model.FormSchemaType)
+        {
+            <tr>
+                <th scope="row">@type.Id</th>
+                <td>@type.Title</td>
+                <td>@type.CreationDate</td>
+                <td><a role="button" asp-page="/Edit" asp-route:id="@type.Id" class="btn btn-sm btn-warning">Edit</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
