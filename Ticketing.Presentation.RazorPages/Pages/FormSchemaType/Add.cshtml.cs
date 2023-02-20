@@ -21,10 +21,10 @@ namespace Ticketing.Presentation.RazorPages.Pages.FormSchemaType
             Command = new NewFormSchemaTypeCommand();
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
             application.Add(Command);
-            RedirectToPage("/FormSchemaType/Index");
+            return RedirectToPage("/FormSchemaType/Index");
         }
     }
 }
