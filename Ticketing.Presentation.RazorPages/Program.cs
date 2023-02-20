@@ -1,7 +1,11 @@
+using Ticketing.Infrastructure.Core;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+Bootstrapper.Set(builder.Services, builder.Configuration.GetConnectionString("Localhost"));
 
 var app = builder.Build();
 

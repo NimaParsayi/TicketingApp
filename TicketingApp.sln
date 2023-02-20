@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Infrastructure.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Presentation.WebApi", "Ticketing.Presentation.WebApi\Ticketing.Presentation.WebApi.csproj", "{768CA6CD-3C60-4370-A38D-8BD9430BF8D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Presentation.RazorPages", "Ticketing.Presentation.RazorPages\Ticketing.Presentation.RazorPages.csproj", "{D4037FB0-C57D-4DF3-95B7-0819AFF58913}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Presentation.RazorPages", "Ticketing.Presentation.RazorPages\Ticketing.Presentation.RazorPages.csproj", "{D4037FB0-C57D-4DF3-95B7-0819AFF58913}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ticketing.Application.Contracts\Ticketing.Application.Contracts.csproj" />
-    <ProjectReference Include="..\Ticketing.Application\Ticketing.Application.csproj" />
-    <ProjectReference Include="..\Ticketing.Domain\Ticketing.Domain.csproj" />
     <ProjectReference Include="..\Ticketing.Infrastructure.Core\Ticketing.Infrastructure.Core.csproj" />
   </ItemGroup>
 
