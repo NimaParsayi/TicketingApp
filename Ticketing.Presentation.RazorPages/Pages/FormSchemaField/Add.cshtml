@@ -24,7 +24,7 @@
     </div>
     <div class="mb-3">
         <label for="title" class="form-label">Type of Field</label>
-        <select asp-for="Command.FormSchemaId" class="form-control">
+        <select asp-for="Command.Type" class="form-control">
             <option value="null" disabled selected>Select One...</option>
             @for (var i = 0; i < Model.FieldTypes.Length; i++)
             {
