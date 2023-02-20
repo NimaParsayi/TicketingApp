@@ -14,7 +14,7 @@ public class FormSchema
     public bool IsActive { get; private set; }
     public int TypeId { get; private set; }
     public DateTime CreationDate { get; private set; }
-    public IEnumerable<FormSchemaField> Fields { get; private set; }
+    public IList<FormSchemaField> Fields { get; private set; }
     public FormSchemaType Type { get; private set; }
 
     #endregion

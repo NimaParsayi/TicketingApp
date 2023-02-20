@@ -17,6 +17,6 @@ public class FormSchemaFieldMapping : IEntityTypeConfiguration<FormSchemaField>
         builder.Property(x => x.IsActive).IsRequired();
         builder.Property(x => x.FormSchemaId).IsRequired();
 
-        builder.HasOne(x => x.FormSchema).WithMany(x => x.Fields).HasForeignKey(x => x.FormSchemaId);
+        // builder.HasOne(x => x.FormSchema).WithMany(x => x.Fields).HasForeignKey(x => x.FormSchemaId);
     }
 }
