@@ -1,0 +1,18 @@
+﻿@page
+@model Ticketing.Presentation.RazorPages.Pages.Form.AddModel
+@{
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="list" class="form-label">Form Structure</label>
+        <select asp-for="SelectedType" class="form-control" name="list" required>
+            <option value="null" disabled selected>Select One...</option>
+            @foreach (var type in Model.Types)
+            {
+                <option value="@type.Id">@type.Title</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Select form for fill</button>
+</form>
