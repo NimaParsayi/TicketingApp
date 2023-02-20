@@ -48,7 +48,8 @@ public class FormSchemaFieldApplication : IFormSchemaFieldApplication
             Title = formSchemaField.Title,
             Description = formSchemaField.Description,
             CreationDate = formSchemaField.CreationDate.ToShortDateString(),
-            FormSchemaId = formSchemaField.FormSchemaId
+            FormSchemaId = formSchemaField.FormSchemaId,
+            Type = formSchemaField.Type.ToString(),
         };
     }
 

@@ -39,13 +39,13 @@ public class FormSchemaField
 
     #region Methods
 
-    public void Update(string title, string description, FormSchemaFieldType type, IFormSchemaFieldValidator validator)
+    public void Update(string title, string description, int type, IFormSchemaFieldValidator validator)
     {
         validator.CheckTitleIsNotEmpty(title);
         validator.CheckDescriptionIsNotEmpty(description);
         Title = title;
         Description = description;
-        Type = type;
+        Type = (FormSchemaFieldType)type;
     }
 
     public void Active() => IsActive = true;
