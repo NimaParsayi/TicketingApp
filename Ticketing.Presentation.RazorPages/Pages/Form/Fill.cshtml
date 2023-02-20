@@ -1,0 +1,21 @@
+﻿@page
+@model Ticketing.Presentation.RazorPages.Pages.Form.FillModel
+@{
+}
+
+<div class="card mb-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Structure.Title</h5>
+        <p class="card-text">@Model.Structure.Description</p>
+        <form method="post">
+            @foreach (var field in (IList<object>)Model.Structure.Fields)
+            {
+                <div class="mb-3">
+                    <label for="title" class="form-label">field.Title</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="title" required>
+                </div>
+            }
+            <button type="submit" class="btn btn-primary">Select form for fill</button>
+        </form>
+    </div>
+</div>

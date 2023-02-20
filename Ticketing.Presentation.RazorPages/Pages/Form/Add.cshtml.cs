@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Ticketing.Application.Contracts.Form;
 using Ticketing.Application.Contracts.Form.ViewModels;
 using Ticketing.Application.Contracts.FormSchemaType;
@@ -16,19 +17,19 @@ namespace Ticketing.Presentation.RazorPages.Pages.Form
         {
             this.typeApplication = typeApplication;
         }
-
-        public IList<FormSchemaTypeViewModel> Types { get; set; }
         [BindProperty]
         public int SelectedType { get; set; }
+        [BindProperty]
+        public List<SelectListItem> Types { get; set; }
 
         public void OnGet()
         {
-            Types = typeApplication.GetAll();
+            Types = typeApplication.GetAll().Select((value, index) => new SelectListItem { Text = value.Title, Value = index.ToString() }).ToList();
         }
 
         public IActionResult OnPost()
         {
-            return RedirectToPage($"/Form/Fill?id={SelectedType}");
+            return RedirectToPage("/Form/Fill", new { @id = SelectedType });
         }
     }
 }
