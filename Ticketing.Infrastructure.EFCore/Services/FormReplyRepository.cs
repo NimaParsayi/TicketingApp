@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using Ticketing.Domain.FormReplyAgg;
 
 namespace Ticketing.Infrastructure.EFCore.Services;
@@ -16,6 +17,8 @@ public class FormReplyRepository : IFormReplyRepository
     public FormReply GetBy(long id) => context.FormsReplies.Include(x => x.Form).FirstOrDefault(x => x.Id == id);
 
     public IList<FormReply> GetBy(string mobile) => context.FormsReplies.Include(x => x.Form).Where(x => x.Mobile == mobile).ToList();
+
+    public IList<FormReply> GetFormReplies(int formId) => context.FormsReplies.Include(x => x.Form).Where(x => x.FormId == formId).ToList();
 
     public void Add(FormReply formReply) => context.FormsReplies.Add(formReply);
 
