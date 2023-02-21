@@ -5,6 +5,7 @@ using Ticketing.Application.Contracts.Form;
 using Ticketing.Application.Contracts.Form.ViewModels;
 using Ticketing.Application.Contracts.FormReply;
 using Ticketing.Application.Contracts.FormReply.Commands;
+using Ticketing.Application.Contracts.FormReply.ViewModels;
 
 namespace Ticketing.Presentation.RazorPages.Pages.Form
 {
@@ -20,6 +21,7 @@ namespace Ticketing.Presentation.RazorPages.Pages.Form
 
         public FormViewModel Form { get; set; }
         public IDictionary<string, object> Fields { get; set; }
+        public IList<FormReplyViewModel> Replies { get; set; }
         [BindProperty]
         public NewReplyCommand Command { get; set; }
 
@@ -27,6 +29,7 @@ namespace Ticketing.Presentation.RazorPages.Pages.Form
         {
             Form = application.GetBy(id);
             Fields = JsonConvert.DeserializeObject<IDictionary<string, object>>(Form.Data.ToString());
+            Replies = replyApplication.GetAll().Where(x => x.FormId == id).ToList();
             Command = new NewReplyCommand();
         }
 

@@ -17,13 +17,26 @@
     </div>
 </div>
 
+@foreach (var reply in Model.Replies)
+{
+    <br />
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Reply Id: @reply.Id</h5>
+            <p class="card-text">From: @reply.Mobile</p>
+            <textarea class="form-control" rows="3" readonly>@reply.Message</textarea>
+        </div>
+    </div>
+}
+
 <br />
 
 <div class="card mb-3">
     <div class="card-body">
         <h5 class="card-title">Reply</h5>
         <form method="post">
-            <input type="hidden" asp-for="Command.FormId" value="@Model.Form.Id"/>
+            <input type="hidden" asp-for="Command.FormId" value="@Model.Form.Id" />
             <div class="mb-3">
                 <label for="title" class="form-label">Mobile</label>
                 <input type="text" class="form-control" asp-for="Command.Mobile">
