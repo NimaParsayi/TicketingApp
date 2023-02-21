@@ -17,6 +17,19 @@
     </div>
 </div>
 
+@foreach (var reply in Model.Replies)
+{
+    <br />
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Reply Id: @reply.Id</h5>
+            <p class="card-text">From: @reply.Mobile</p>
+            <textarea class="form-control" rows="3" readonly>@reply.Message</textarea>
+        </div>
+    </div>
+}
+
 <br />
 
 <div class="card mb-3">
