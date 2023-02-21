@@ -1,21 +1,29 @@
 ﻿@page
 @model Ticketing.Presentation.RazorPages.Pages.Form.FillModel
 @{
+    IDictionary<string, object> fieldValues;
 }
 
-<div class="card mb-3" style="width: 18rem;">
+<div class="card mb-3">
     <div class="card-body">
         <h5 class="card-title">@Model.Structure.Title</h5>
         <p class="card-text">@Model.Structure.Description</p>
         <form method="post">
-            @foreach (var field in (IList<object>)Model.Structure.Fields)
+            <div class="mb-3">
+                <label for="mobile" class="form-label">Mobile</label>
+                <input type="text" max="12" class="form-control" id="mobile" aria-describedby="mobile" asp-for="Command.Mobile" required>
+                <small>Enter your mobile like: 98912xxxxxxx</small>
+            </div>
+            @foreach (var field in (IDictionary<string, object>)Model.Structure.Fields)
             {
+                { fieldValues = (IDictionary<string, object>)field.Value; }
                 <div class="mb-3">
-                    <label for="title" class="form-label">field.Title</label>
-                    <input type="text" class="form-control" id="title" aria-describedby="title" required>
+                    <label for="title" class="form-label">@fieldValues["Title"].</label>
+                    <input type="text" class="form-control" name="@fieldValues["Title"]" required>
+                    <small>@fieldValues["Description"]</small>
                 </div>
             }
-            <button type="submit" class="btn btn-primary">Select form for fill</button>
+            <button type="submit" class="btn btn-primary">Submit Form</button>
         </form>
     </div>
 </div>
