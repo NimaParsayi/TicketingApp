@@ -59,11 +59,12 @@ public class FormSchemaApplication : IFormSchemaApplication
         var formFields = (IDictionary<string, object>)obj;
         foreach (var field in formStructure.Schema.Fields)
         {
-            formFields.Add(field.Title, new
-            {
-                field.Description,
-                field.Type,
-            });
+            ExpandoObject objField = new ExpandoObject();
+            var fieldObject = (IDictionary<string, object>)objField;
+            fieldObject.Add("Title", field.Title);
+            fieldObject.Add("Description", field.Description);
+            fieldObject.Add("Type", field.Type.ToString());
+            formFields.Add(field.Id.ToString(), objField);
         }
         return new FormSchemaStructureViewModel()
         {
