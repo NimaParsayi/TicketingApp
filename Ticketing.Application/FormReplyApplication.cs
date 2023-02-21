@@ -67,24 +67,6 @@ public class FormReplyApplication : IFormReplyApplication
         return list;
     }
 
-    public IList<FormReplyViewModel> GetFormReplies(int id)
-    {
-        var list = new List<FormReplyViewModel>();
-        foreach (var item in formReplyRepository.GetFormReplies(id))
-        {
-            list.Add(new FormReplyViewModel()
-            {
-                Id = item.Id,
-                CreationDate = item.CreationDate.ToShortDateString(),
-                Message = item.Message,
-                FormId = item.FormId,
-                Mobile = item.Mobile,
-                ReplyToMessageId = item.ReplyToMessageId,
-            });
-        }
-        return list;
-    }
-
     public void Add(NewReplyCommand command)
     {
         formReplyRepository.Add(new FormReply(command.Message, command.Mobile, command.FormId, formReplyValidator, command.ReplyToMessageId));
