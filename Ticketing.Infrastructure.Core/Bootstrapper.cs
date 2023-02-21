@@ -2,11 +2,14 @@
 using Microsoft.Extensions.DependencyInjection;
 using Ticketing.Application;
 using Ticketing.Application.Contracts.Form;
+using Ticketing.Application.Contracts.FormReply;
 using Ticketing.Application.Contracts.FormSchema;
 using Ticketing.Application.Contracts.FormSchemaField;
 using Ticketing.Application.Contracts.FormSchemaType;
 using Ticketing.Domain.FormAgg;
 using Ticketing.Domain.FormAgg.Services;
+using Ticketing.Domain.FormReplyAgg;
+using Ticketing.Domain.FormReplyAgg.Services;
 using Ticketing.Domain.FormSchemaAgg;
 using Ticketing.Domain.FormSchemaAgg.Services;
 using Ticketing.Domain.FormSchemaFieldAgg;
@@ -29,6 +32,7 @@ namespace Ticketing.Infrastructure.Core
             services.AddTransient<IFormSchemaRepository, FormSchemaRepository>();
             services.AddTransient<IFormSchemaFieldRepository, FormSchemaFieldRepository>();
             services.AddTransient<IFormRepository, FormRepository>();
+            services.AddTransient<IFormReplyRepository, FormReplyRepository>();
 
             #endregion
 
@@ -49,6 +53,10 @@ namespace Ticketing.Infrastructure.Core
             // Form
             services.AddTransient<IFormValidator, FormValidator>();
             services.AddTransient<IFormApplication, FormApplication>();
+
+            // FormReply
+            services.AddTransient<IFormReplyValidator, FormReplyValidator>();
+            services.AddTransient<IFormReplyApplication, FormReplyApplication>();
 
             #endregion
         }
