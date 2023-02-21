@@ -1,18 +1,38 @@
 ﻿@page
 @model Ticketing.Presentation.RazorPages.Pages.Form.DetailsModel
 @{
-    var fields = Model.Form.Data as List<object>;
 }
 
-
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Mobile</label>
-  <input type="text" readonly class="form-control" id="mobile" value="@Model.Form.Mobile">
-</div>
-@*@foreach (var field in fields)
-{
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">@field.</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Form Number @Model.Form.Id</h5>
+        <p class="card-text">@Model.Form.Mobile</p>
+        @foreach (var field in Model.Fields)
+        {
+            <div class="mb-3">
+                <label for="title" class="form-label">@field.Key</label>
+                <input type="text" class="form-control" readonly value="@field.Value">
+            </div>
+        }
     </div>
-}*@
+</div>
+
+<br />
+
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Reply</h5>
+        <form method="post">
+            <input type="hidden" asp-for="Command.FormId" value="@Model.Form.Id"/>
+            <div class="mb-3">
+                <label for="title" class="form-label">Mobile</label>
+                <input type="text" class="form-control" asp-for="Command.Mobile">
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Message</label>
+                <textarea class="form-control" asp-for="Command.Message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Send Reply</button>
+        </form>
+    </div>
+</div>
