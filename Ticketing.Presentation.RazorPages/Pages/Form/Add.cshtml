@@ -8,5 +8,6 @@
         <label for="list" class="form-label">Form Structure</label>
         <select asp-for="SelectedType" asp-items="Model.Types" class="form-control" required></select>
     </div>
+    <input type="hidden" asp-for="SelectedType"/>
     <button type="submit" class="btn btn-primary">Select form for fill</button>
 </form>

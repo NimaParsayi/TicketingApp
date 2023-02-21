@@ -54,10 +54,10 @@ public class FormSchemaApplication : IFormSchemaApplication
 
     public FormSchemaStructureViewModel GetFormStructure(int typeId)
     {
-        var formStructure = formSchemaTypeRepository.GetBy(typeId).Schema;
+        var formStructure = formSchemaTypeRepository.GetBy(typeId);
         ExpandoObject obj = new ExpandoObject();
         var formFields = (IDictionary<string, object>)obj;
-        foreach (var field in formStructure.Fields)
+        foreach (var field in formStructure.Schema.Fields)
         {
             formFields.Add(field.Title, new
             {
@@ -67,8 +67,8 @@ public class FormSchemaApplication : IFormSchemaApplication
         }
         return new FormSchemaStructureViewModel()
         {
-            Title = formStructure.Title,
-            Description = formStructure.Description,
+            Title = formStructure.Schema.Title,
+            Description = formStructure.Schema.Description,
             Fields = formFields,
         };
     }

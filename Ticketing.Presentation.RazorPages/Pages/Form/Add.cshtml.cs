@@ -24,7 +24,7 @@ namespace Ticketing.Presentation.RazorPages.Pages.Form
 
         public void OnGet()
         {
-            Types = typeApplication.GetAll().Select((value, index) => new SelectListItem { Text = value.Title, Value = index.ToString() }).ToList();
+            Types = typeApplication.GetAll().Select((value, index) => new SelectListItem { Text = value.Title, Value = value.Id.ToString() }).ToList();
         }
 
         public IActionResult OnPost()
